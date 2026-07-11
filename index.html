@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cocomelon - Where Kids Can Be Happy and Smart!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bgMusic" loop>
+        <source src="music/background.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎨 Cocomelon</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#videos">Videos</a></li>
+                <li><a href="#learning">Learning</a></li>
+                <li><a href="#parents">Parents</a></li>
+            </ul>
+            <div class="music-toggle">
+                <button id="musicBtn" class="music-btn">🔊 Music ON</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>🎉 Where Kids Can Be Happy and Smart!</h1>
+            <p>Learn letters, numbers, animal sounds, colors, and so much more through fun songs and colorful animations!</p>
+            <button class="cta-btn">Start Learning Now 🚀</button>
+        </div>
+        <div class="hero-animation">
+            <div class="bouncing-ball"></div>
+            <div class="floating-star"></div>
+            <div class="floating-heart"></div>
+        </div>
+    </section>
+
+    <!-- Featured Videos Section -->
+    <section id="videos" class="videos-section">
+        <h2>🎥 Featured Videos</h2>
+        <div class="videos-grid">
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <span>🅰️</span>
+                </div>
+                <h3>Learning ABC</h3>
+                <p>Fun alphabet songs and colorful letter animations!</p>
+                <button class="play-btn">▶️ Watch</button>
+            </div>
+
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <span>🔢</span>
+                </div>
+                <h3>Number Fun</h3>
+                <p>Count along and learn numbers with catchy tunes!</p>
+                <button class="play-btn">▶️ Watch</button>
+            </div>
+
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <span>🦁</span>
+                </div>
+                <h3>Animal Sounds</h3>
+                <p>Meet friendly animals and learn their sounds!</p>
+                <button class="play-btn">▶️ Watch</button>
+            </div>
+
+            <div class="video-card">
+                <div class="video-placeholder">
+                    <span>🌈</span>
+                </div>
+                <h3>Rainbow Colors</h3>
+                <p>Discover vibrant colors through music and dance!</p>
+                <button class="play-btn">▶️ Watch</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Content Section -->
+    <section id="learning" class="learning-section">
+        <h2>📚 Educational Content</h2>
+        
+        <div class="learning-grid">
+            <!-- Letters -->
+            <div class="learning-card">
+                <div class="card-icon">🅰️</div>
+                <h3>Letters & Alphabet</h3>
+                <p>Learn uppercase and lowercase letters through songs and stories!</p>
+                <div class="content-preview">A, B, C, D, E, F, G...</div>
+            </div>
+
+            <!-- Numbers -->
+            <div class="learning-card">
+                <div class="card-icon">🔢</div>
+                <h3>Numbers & Counting</h3>
+                <p>Count from 1 to 10 and beyond with fun animations!</p>
+                <div class="content-preview">1, 2, 3, 4, 5...</div>
+            </div>
+
+            <!-- Animals -->
+            <div class="learning-card">
+                <div class="card-icon">🦁</div>
+                <h3>Animals & Sounds</h3>
+                <p>Explore different animals and learn their unique sounds!</p>
+                <div class="content-preview">🐶 🐱 🦒 🐘 🦋</div>
+            </div>
+
+            <!-- Colors -->
+            <div class="learning-card">
+                <div class="card-icon">🌈</div>
+                <h3>Colors & Shapes</h3>
+                <p>Discover beautiful colors and fun geometric shapes!</p>
+                <div class="content-preview">Red, Blue, Yellow, Green...</div>
+            </div>
+
+            <!-- Emotions -->
+            <div class="learning-card">
+                <div class="card-icon">😊</div>
+                <h3>Emotions & Feelings</h3>
+                <p>Understand and express different emotions!</p>
+                <div class="content-preview">Happy 😊 Sad 😢 Excited 😄</div>
+            </div>
+
+            <!-- Family & Friends -->
+            <div class="learning-card">
+                <div class="card-icon">👨‍👩‍👧‍👦</div>
+                <h3>Family & Friends</h3>
+                <p>Learn about family members and making new friends!</p>
+                <div class="content-preview">Mom, Dad, Sister, Brother...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Games Section -->
+    <section class="games-section">
+        <h2>🎮 Fun & Games</h2>
+        <div class="games-grid">
+            <div class="game-card">
+                <span class="game-emoji">🎯</span>
+                <h3>Letter Match</h3>
+                <p>Match uppercase and lowercase letters!</p>
+            </div>
+            <div class="game-card">
+                <span class="game-emoji">🧩</span>
+                <h3>Number Puzzle</h3>
+                <p>Arrange numbers in correct order!</p>
+            </div>
+            <div class="game-card">
+                <span class="game-emoji">🎨</span>
+                <h3>Color Painter</h3>
+                <p>Paint pictures with your favorite colors!</p>
+            </div>
+            <div class="game-card">
+                <span class="game-emoji">🎵</span>
+                <h3>Sound Maker</h3>
+                <p>Create your own fun sounds and music!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parents Section -->
+    <section id="parents" class="parents-section">
+        <h2>👨‍👩‍👧‍👦 For Parents & Educators</h2>
+        <div class="parents-content">
+            <div class="parent-card">
+                <h3>📺 Quality Educational Content</h3>
+                <p>We create beautiful 3D animations with educational lyrics designed by child development experts.</p>
+            </div>
+            <div class="parent-card">
+                <h3>🛡️ Safe & Secure</h3>
+                <p>A safe space for children to learn and grow. No ads or inappropriate content!</p>
+            </div>
+            <div class="parent-card">
+                <h3>👥 Family Bonding</h3>
+                <p>Watch and learn together! Our content encourages parent-child interaction and play.</p>
+            </div>
+            <div class="parent-card">
+                <h3>📊 Learning Progress</h3>
+                <p>Track your child's learning journey and see their development progress!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Cocomelon - Where Kids Can Be Happy and Smart!</p>
+            <div class="social-links">
+                <a href="#" class="social-icon">📱</a>
+                <a href="#" class="social-icon">📧</a>
+                <a href="#" class="social-icon">🎥</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
