@@ -3,6 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Where kids can be happy and smart! A colorful, playful, and fully responsive educational website designed to make learning fun for children.">
+    <meta name="theme-color" content="#FF6B6B">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Cocomelon">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%23FF6B6B' rx='45' width='192' height='192'/><text x='96' y='96' font-size='80' fill='white' text-anchor='middle' dominant-baseline='middle'>🎨</text></svg>">
+    <link rel="manifest" href="manifest.json">
     <title>Cocomelon - Where Kids Can Be Happy and Smart!</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,6 +32,7 @@
             </ul>
             <div class="music-toggle">
                 <button id="musicBtn" class="music-btn">🔊 Music ON</button>
+                <button id="installBtn" class="music-btn" style="display: none; margin-left: 10px;">📲 Install App</button>
             </div>
         </div>
     </nav>
@@ -141,7 +149,7 @@
     </section>
 
     <!-- Interactive Games Section -->
-    <section class="games-section">
+    <section id="games-section" class="games-section">
         <h2>🎮 Fun & Games</h2>
         <div class="games-grid">
             <div class="game-card">
@@ -202,6 +210,8 @@
         </div>
     </footer>
 
+    <!-- Scripts -->
+    <script src="app.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
