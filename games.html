@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Games - Cocomelon Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="games.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎨 Cocomelon</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="games.html" class="active">Games</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Games Container -->
+    <div class="games-container">
+        <h1>🎮 Mini Learning Games</h1>
+        <p class="subtitle">Play games to earn bonus points!</p>
+
+        <div class="games-menu">
+            <div class="game-menu-card" onclick="startGame('memory')">
+                <div class="game-menu-icon">🧠</div>
+                <h3>Memory Match</h3>
+                <p>Match pairs of cards</p>
+                <p class="reward">+50 Bonus Points</p>
+            </div>
+
+            <div class="game-menu-card" onclick="startGame('alphabet')">
+                <div class="game-menu-icon">🅰️</div>
+                <h3>Letter Quest</h3>
+                <p>Find the correct letter</p>
+                <p class="reward">+75 Bonus Points</p>
+            </div>
+
+            <div class="game-menu-card" onclick="startGame('numbers')">
+                <div class="game-menu-icon">🔢</div>
+                <h3>Number Adventure</h3>
+                <p>Arrange numbers in order</p>
+                <p class="reward">+50 Bonus Points</p>
+            </div>
+
+            <div class="game-menu-card" onclick="startGame('colors')">
+                <div class="game-menu-icon">🎨</div>
+                <h3>Color Match</h3>
+                <p>Match colors and shapes</p>
+                <p class="reward">+75 Bonus Points</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Memory Game -->
+    <div id="memoryGameModal" class="game-modal">
+        <div class="game-content">
+            <div class="game-header">
+                <h2>🧠 Memory Match</h2>
+                <button class="close-game" onclick="closeGame()">&times;</button>
+            </div>
+            <div class="game-info">
+                <p>Score: <span id="memoryScore">0</span>/8</p>
+                <p>Time: <span id="memoryTime">0</span>s</p>
+            </div>
+            <div class="memory-grid" id="memoryGrid"></div>
+            <button class="play-again-btn" onclick="resetMemoryGame()" style="display:none" id="memoryReplay">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Alphabet Game -->
+    <div id="alphabetGameModal" class="game-modal">
+        <div class="game-content">
+            <div class="game-header">
+                <h2>🅰️ Letter Quest</h2>
+                <button class="close-game" onclick="closeGame()">&times;</button>
+            </div>
+            <div class="game-info">
+                <p>Question: <span id="alphabetQuestion">1</span>/5</p>
+                <p>Score: <span id="alphabetScore">0</span></p>
+            </div>
+            <div class="alphabet-game">
+                <p id="alphabetPrompt" class="prompt">Find the letter...</p>
+                <div class="alphabet-options" id="alphabetOptions"></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="alphabetProgress" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Numbers Game -->
+    <div id="numbersGameModal" class="game-modal">
+        <div class="game-content">
+            <div class="game-header">
+                <h2>🔢 Number Adventure</h2>
+                <button class="close-game" onclick="closeGame()">&times;</button>
+            </div>
+            <div class="game-info">
+                <p>Question: <span id="numbersQuestion">1</span>/5</p>
+                <p>Score: <span id="numbersScore">0</span></p>
+            </div>
+            <div class="numbers-game">
+                <p class="prompt">Arrange these numbers from smallest to largest:</p>
+                <div class="numbers-display" id="numbersDisplay"></div>
+                <div class="draggable-numbers" id="draggableNumbers"></div>
+                <button class="submit-btn" onclick="checkNumbersAnswer()">Submit Answer</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Colors Game -->
+    <div id="colorsGameModal" class="game-modal">
+        <div class="game-content">
+            <div class="game-header">
+                <h2>🎨 Color Match</h2>
+                <button class="close-game" onclick="closeGame()">&times;</button>
+            </div>
+            <div class="game-info">
+                <p>Question: <span id="colorsQuestion">1</span>/5</p>
+                <p>Score: <span id="colorsScore">0</span></p>
+            </div>
+            <div class="colors-game">
+                <p id="colorPrompt" class="prompt">Find the color...</p>
+                <div class="color-options" id="colorOptions"></div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="colorProgress" style="width: 0%"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="game-modal">
+        <div class="game-over-content">
+            <h2>🎉 Game Complete!</h2>
+            <div class="game-over-stats">
+                <p class="final-score">Score: <span id="finalScore">0</span></p>
+                <p class="bonus-points">Bonus Points Earned: <span id="bonusPoints">0</span> ⭐</p>
+            </div>
+            <div class="game-over-buttons">
+                <button onclick="playAgain()">Play Again</button>
+                <button onclick="backToDashboard()">Back to Dashboard</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="games.js"></script>
+</body>
+</html>

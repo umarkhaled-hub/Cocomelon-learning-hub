@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parent Analytics - Cocomelon Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="parent-analytics.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">🎨 Cocomelon</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="dashboard.html">Student Dashboard</a></li>
+                <li><a href="parent-analytics.html" class="active">Parent Analytics</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Parent Analytics Container -->
+    <div class="analytics-container">
+        <header class="analytics-header">
+            <h1>👨‍👩‍👧‍👦 Parent Analytics Dashboard</h1>
+            <p>Track your child's learning progress and achievements</p>
+        </header>
+
+        <!-- Child Selection -->
+        <section class="child-selection">
+            <h2>Select Child:</h2>
+            <div class="child-buttons">
+                <button class="child-btn active" onclick="selectChild('default')">👶 My Child</button>
+                <button class="child-btn" onclick="addChild()">➕ Add Another Child</button>
+            </div>
+        </section>
+
+        <!-- Summary Cards -->
+        <section class="summary-cards">
+            <div class="summary-card">
+                <h3>Total Points</h3>
+                <p class="big-number" id="parentTotalPoints">0</p>
+                <p class="subtitle">Earned this week</p>
+            </div>
+            <div class="summary-card">
+                <h3>Lessons Completed</h3>
+                <p class="big-number" id="parentLessonsCount">0</p>
+                <p class="subtitle">Out of 60 total</p>
+            </div>
+            <div class="summary-card">
+                <h3>Achievements</h3>
+                <p class="big-number" id="parentAchievementsCount">0</p>
+                <p class="subtitle">Badges earned</p>
+            </div>
+            <div class="summary-card">
+                <h3>Daily Streak</h3>
+                <p class="big-number" id="parentStreakCount">0</p>
+                <p class="subtitle">Days in a row</p>
+            </div>
+        </section>
+
+        <!-- Progress Charts -->
+        <section class="charts-section">
+            <div class="chart-container">
+                <h2>📊 Learning Progress by Topic</h2>
+                <div class="progress-bars">
+                    <div class="topic-progress">
+                        <label>Letters & Alphabet</label>
+                        <div class="bar">
+                            <div class="bar-fill" id="chart-alphabet" style="width: 0%; background: linear-gradient(90deg, #FF6B6B, #FFE66D);"></div>
+                        </div>
+                        <span id="chart-alphabet-text">0/10</span>
+                    </div>
+                    <div class="topic-progress">
+                        <label>Numbers & Counting</label>
+                        <div class="bar">
+                            <div class="bar-fill" id="chart-numbers" style="width: 0%; background: linear-gradient(90deg, #4ECDC4, #44A08D);"></div>
+                        </div>
+                        <span id="chart-numbers-text">0/10</span>
+                    </div>
+                    <div class="topic-progress">
+                        <label>Animals & Sounds</label>
+                        <div class="bar">
+                            <div class="bar-fill" id="chart-animals" style="width: 0%; background: linear-gradient(90deg, #9B59B6, #3498DB);"></div>
+                        </div>
+                        <span id="chart-animals-text">0/10</span>
+                    </div>
+                    <div class="topic-progress">
+                        <label>Colors & Shapes</label>
+                        <div class="bar">
+                            <div class="bar-fill" id="chart-colors" style="width: 0%; background: linear-gradient(90deg, #E67E22, #E74C3C);"></div>
+                        </div>
+                        <span id="chart-colors-text">0/10</span>
+                    </div>
+                    <div class="topic-progress">
+                        <label>Emotions & Feelings</label>
+                        <div class="bar">
+                            <div class="bar-fill" id="chart-emotions" style="width: 0%; background: linear-gradient(90deg, #F39C12, #E67E22);"></div>
+                        </div>
+                        <span id="chart-emotions-text">0/10</span>
+                    </div>
+                    <div class="topic-progress">
+                        <label>Family & Friends</label>
+                        <div class="bar">
+                            <div class="bar-fill" id="chart-family" style="width: 0%; background: linear-gradient(90deg, #27AE60, #16A085);"></div>
+                        </div>
+                        <span id="chart-family-text">0/10</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Showcase -->
+        <section class="achievements-showcase">
+            <h2>🏆 Achievements Earned</h2>
+            <div class="achievements-display" id="parentAchievements">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Learning Insights -->
+        <section class="insights-section">
+            <h2>💡 Learning Insights</h2>
+            <div class="insights-grid">
+                <div class="insight-card">
+                    <h3>📈 Strongest Topic</h3>
+                    <p id="strongestTopic" class="insight-value">-</p>
+                    <p class="insight-desc">Your child is performing best in...</p>
+                </div>
+                <div class="insight-card">
+                    <h3>🎯 Focus Area</h3>
+                    <p id="focusArea" class="insight-value">-</p>
+                    <p class="insight-desc">Encourage learning in this topic</p>
+                </div>
+                <div class="insight-card">
+                    <h3>⏱️ Daily Average</h3>
+                    <p id="dailyAverage" class="insight-value">-</p>
+                    <p class="insight-desc">Minutes spent learning</p>
+                </div>
+                <div class="insight-card">
+                    <h3>🎓 Learning Level</h3>
+                    <p id="learningLevel" class="insight-value">-</p>
+                    <p class="insight-desc">Current proficiency level</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recommendations -->
+        <section class="recommendations">
+            <h2>📋 Parent Recommendations</h2>
+            <div class="recommendation-list" id="recommendationList">
+                <!-- Populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Export & Share -->
+        <section class="export-section">
+            <h2>📤 Export & Share</h2>
+            <div class="export-buttons">
+                <button onclick="exportPDF()">📄 Download PDF Report</button>
+                <button onclick="shareProgress()">📧 Share Progress via Email</button>
+                <button onclick="printReport()">🖨️ Print Report</button>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Cocomelon Parent Analytics - Supporting Your Child's Learning Journey!</p>
+        </div>
+    </footer>
+
+    <script src="parent-analytics.js"></script>
+</body>
+</html>

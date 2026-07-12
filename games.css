@@ -1,0 +1,462 @@
+/* Mini Games Styles */
+
+.games-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.games-container h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #2C3E50;
+    margin-bottom: 0.5rem;
+    animation: bounce 2s infinite;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #7F8C8D;
+    margin-bottom: 3rem;
+}
+
+.games-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.game-menu-card {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.game-menu-card:hover {
+    transform: translateY(-15px) scale(1.05);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+
+.game-menu-icon {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+.game-menu-card h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.game-menu-card p {
+    font-size: 0.95rem;
+    margin: 0.5rem 0;
+    opacity: 0.9;
+}
+
+.reward {
+    background: rgba(255, 215, 0, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-top: 1rem !important;
+}
+
+/* Game Modal */
+.game-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    animation: fadeIn 0.3s ease;
+}
+
+.game-content,
+.game-over-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 20px;
+    max-width: 600px;
+    color: white;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.3s ease;
+}
+
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.game-header h2 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.close-game {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.close-game:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(90deg);
+}
+
+.game-info {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.game-info p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+/* Memory Game */
+.memory-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.memory-card {
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #FFE66D, #FF6B6B);
+    border: 2px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    user-select: none;
+}
+
+.memory-card:hover:not(.flipped):not(.matched) {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.memory-card.flipped {
+    background: linear-gradient(135deg, #4ECDC4, #44A08D);
+    color: white;
+}
+
+.memory-card.matched {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* Alphabet Game */
+.alphabet-game {
+    text-align: center;
+}
+
+.prompt {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    border-radius: 10px;
+}
+
+.alphabet-options,
+.color-options {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.option-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid white;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+
+.option-btn:hover {
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(1.1);
+}
+
+.option-btn.correct {
+    background: #27AE60;
+    border-color: #27AE60;
+    animation: bounce 0.5s ease;
+}
+
+.option-btn.incorrect {
+    background: #E74C3C;
+    border-color: #E74C3C;
+    animation: shake 0.5s ease;
+}
+
+/* Numbers Game */
+.numbers-game {
+    text-align: center;
+}
+
+.numbers-display {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.draggable-numbers {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.number-item {
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: move;
+    transition: all 0.3s ease;
+}
+
+.number-item:hover {
+    background: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
+}
+
+.number-item.placed {
+    opacity: 0.5;
+}
+
+.submit-btn {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Colors Game */
+.colors-game {
+    text-align: center;
+}
+
+.color-option {
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    border: 3px solid white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.color-option:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.color-option.correct {
+    border-color: #FFD700;
+    box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+.color-option.incorrect {
+    opacity: 0.3;
+}
+
+/* Progress Bar */
+.progress-bar {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    height: 20px;
+    overflow: hidden;
+    margin-top: 1rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #FFE66D, #FF6B6B);
+    transition: width 0.3s ease;
+}
+
+/* Game Over */
+.game-over-content {
+    text-align: center;
+}
+
+.game-over-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    animation: bounce 0.5s ease;
+}
+
+.game-over-stats {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.final-score {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.bonus-points {
+    font-size: 1.5rem;
+    color: #FFD700;
+    font-weight: bold;
+}
+
+.game-over-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.game-over-buttons button {
+    background: white;
+    color: #667eea;
+    border: none;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.game-over-buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
+    20%, 40%, 60%, 80% { transform: translateX(10px); }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .game-content,
+    .game-over-content {
+        margin: 20% auto;
+        padding: 1.5rem;
+    }
+
+    .memory-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.5rem;
+    }
+
+    .alphabet-options,
+    .color-options {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .draggable-numbers {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .game-over-buttons {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .games-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .games-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .memory-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .alphabet-options,
+    .color-options {
+        grid-template-columns: 1fr;
+    }
+}
